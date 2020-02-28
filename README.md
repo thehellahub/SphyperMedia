@@ -12,6 +12,8 @@ This section will install Anaconda, initialize an Anaconda environment to operat
 
 2. Follow the instructions at the following link (Section 2): https://learn.unity.com/tutorial/unity-project-setup-and-asset-import?projectId=5e2ebcb5edbc2a18109645ca
 
+3. This tutorial discusses how to improve the artificial intelligence performance: https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-PPO.md#hyperparameters
+
 This section will install Unity Hub, Unity 2019.3 and Above, and import the assets to create your first Machine Learning Unity project.
 Stay employed for life ;)
 https://github.com/Droogans/unmaintainable-code
