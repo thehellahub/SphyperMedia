@@ -1,0 +1,15 @@
+pip install setproctitle
+pip install flask_wtf
+pip install ipython
+pip install requests
+pip install BeautifulSoup
+pip install darkskylib
+pip install geocode
+
+
+
+
+# for custom domain setting
+vim /etc/hosts
+
+127.0.0.1 localhost localhost.localdomain sphypermedia.com
