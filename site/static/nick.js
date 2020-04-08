@@ -19,29 +19,6 @@ function loadNickPage(result){
 	$("#profile").html(result);
 	$("#profile").fadeIn("Slow");
 
-// ** IGNORE THIS **
-//	// get solidworks 3d guitar render
-//	item = "guitar"
-//	$.ajax({
-//		url: "/load-guitar",
-//		dataType: "json",
-//		type: "POST",
-//		data: {"item": item},
-//		success: function(result){
-//			//$("#solidworks-guitar-div").html(result).trigger('onload');;
-//
-//			myWindow = window.open("data:text/html," + encodeURIComponent(result),"_blank", "width=200,height=100");
-//			myWindow.focus();*/
-//
-//			//initialize();
-//
-//
-//			//$("#solidworks-guitar-div").load();
-//
-//	    	$('#solidworks-guitar-div').html(result);
-//	    	evalScriptsIn(result);
-//		}
-//	});
 
 	var company_chart = new CanvasJS.Chart("CompanyPieChartContainer", {
 		animationEnabled: true,

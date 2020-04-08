@@ -78,36 +78,3 @@ def download_nhella_resume():
 					mimetype='pdf',
 					attachment_filename='Nhella_Resume.pdf',
 					as_attachment=True)
-
-
-# # Ignore this.. I was trying to render a 3D guitar made in SOLIDWORKS
-# @webapp.route("/load-guitar", methods=["POST"])
-# def load_solidworks_guitar():	
-# 	print("\n\n Load guitar api route called! \n\n")
-# 	#js_source, css_source = get_js__and_css_source()
-# 	item = request.form["item"]
-# 	htmlfile = render_template(item + ".html")
-
-# 	# print("\n\n\n")
-# 	# print(htmlfile)
-# 	# print("\n\n\n")
-
-# 	# # Load the HTML content
-# 	# html_file = open(htmlfile, 'r')
-# 	# html_content = html_file.read()
-# 	# html_file.close() # clean up
-
-# 	# # Initialize the BS object
-# 	# soup  = bs(htmlfile,'html.parser') 
-# 	# # At this point, we can interact with the HTML 
-# 	# # elements stored in memory using all helpers offered by BS library
-
-# 	# for script in soup.body.find_all('script', recursive=False):
-
-# 	# 	# Print the src attribute
-# 	# 	print('\n\n\n\n\n\n JS source = ' + script['src'] + "\n\n\n\n")
-
-# 	# 	# # Print the type attribute
-# 	# 	# print(' JS type = ' + script['type'])  
-
-#	#return json.dumps(render_template(item + ".html"))
