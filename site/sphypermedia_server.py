@@ -11,14 +11,14 @@ hostname = 'sphypermedia'
 app = Flask(__name__)
 app.register_blueprint(webapp)
 app.register_blueprint(api)
-app.config['SERVER_NAME'] = 'sphypermedia.com:5000'
+#app.config['SERVER_NAME'] = 'sphypermedia.com:5000'	# only for running on server
 
 def main():
 
 	# For developers, use this
-	#app.run(debug=debug, host='0.0.0.0')
+	app.run(debug=debug, host='127.0.0.1')
 
 	# For server, use this
-	app.run(debug=debug)
+	#app.run(debug=debug)
 
 main()

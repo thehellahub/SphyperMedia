@@ -3,8 +3,11 @@ pip install flask_wtf
 pip install ipython
 pip install requests
 pip install BeautifulSoup
+
+# only for Nick's weather thing
 pip install darkskylib
-pip install geocode
+pip install darksky-weather
+pip install pgeocode
 
 
 

@@ -11,7 +11,5 @@ class LogicLayer:
 		return WeatherData.WeatherData(self._oa).nicks_query_by_zip_api_function(zip_code)
 
 
-	def get_nick_data_chart(self):
-		return NickDataChart.main(self)
 
 
