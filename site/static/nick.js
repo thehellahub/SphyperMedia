@@ -1,5 +1,5 @@
 function prepareNickPage() {
-	member = "nick"
+	var member = "nick";
 	$.ajax({
 		url: "/load-profile",
 		dataType: "json",

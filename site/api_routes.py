@@ -5,7 +5,6 @@ import pandas as pd
 import numpy as np
 import json
 from flask import Flask, render_template, Blueprint, request, send_from_directory, send_file, flash, Blueprint, g, session, app
-from bokeh.resources import INLINE
 from flask_wtf import Form
 from bll import logic_layer
 from bs4 import BeautifulSoup as bs
@@ -21,8 +20,6 @@ api = Blueprint("api", __name__, url_prefix="/api")
 
 LogicLayer = logic_layer.LogicLayer()
 
-js_resources = INLINE.render_js()
-css_resources = INLINE.render_css()
 
 def get_js__and_css_source():
 
@@ -53,9 +50,8 @@ def go():
 
 	return render_template("index.html.j2",
 							js_source=js_source,
-							css_source=css_source,
-							js_resources=js_resources,
-							css_resources=css_resources)
+							css_source=css_source
+							)
 
 
 @webapp.route("/load-profile", methods=["POST"])
