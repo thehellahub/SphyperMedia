@@ -74,3 +74,11 @@ def download_nhella_resume():
 					mimetype='pdf',
 					attachment_filename='Nhella_Resume.pdf',
 					as_attachment=True)
+	
+@webapp.route('/download-dleger-resume',methods = ['GET'])
+def download_dleger_resume():
+	path = os.getcwd()
+	return send_file(path+"/Resumes/Dleger_Resume.pdf",
+					mimetype='pdf',
+					attachment_filename='Dleger_Resume.pdf',
+					as_attachment=True)
