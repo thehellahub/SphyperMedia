@@ -24,7 +24,7 @@ LogicLayer = logic_layer.LogicLayer()
 def get_js__and_css_source():
 
 	# Add js files here as you create them
-	js_files = ['init.js','nick.js','magicscroll.js']
+	js_files = ['init.js','nick.js','magicscroll.js','derrick.js']
 
 	css_files = ['style.css', 'd3LineChart.css','tipsy.css','magicscroll.css']
 

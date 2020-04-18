@@ -11,7 +11,9 @@ $( document ).ready(function() {
     $('#see-nick-profile').click(function() {
 		prepareNickPage();
 	});
-
+    $('#see-derrick-profile').click(function() {
+		prepareDerrickPage();
+	});
 });
 
 // Initial page setup
