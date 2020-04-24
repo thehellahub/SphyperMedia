@@ -1,6 +1,6 @@
 import setproctitle
 from gevent.pywsgi import WSGIServer
-from api_routes import webapp, api
+from api_routes import webapp
 from flask import Flask, redirect, url_for, render_template, Blueprint, session, app
 
 
@@ -10,8 +10,7 @@ hostname = 'sphypermedia'
 
 app = Flask(__name__)
 app.register_blueprint(webapp)
-app.register_blueprint(api)
-#app.config['SERVER_NAME'] = 'sphypermedia.com:5000'	# only for running on server
+app.config['SERVER_NAME'] = 'sphypermedia.com:5000'	# only for running on server
 
 def main():
 
