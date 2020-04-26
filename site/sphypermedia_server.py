@@ -10,7 +10,7 @@ hostname = 'sphypermedia'
 
 app = Flask(__name__)
 app.register_blueprint(webapp)
-app.config['SERVER_NAME'] = 'sphypermedia.com:5000'	# only for running on server
+#app.config['SERVER_NAME'] = 'sphypermedia.com:5000'	# only for running on server
 
 def main():
 
