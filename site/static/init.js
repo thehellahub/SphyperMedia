@@ -23,13 +23,13 @@ function prepare_page_load() {
 	$('#slides').fadeIn('slow');
 	//$('#fixed-background-image').fadeIn('slow');
 	$('#footer-section').fadeIn('slow');
-	window.scrollTo(0, 100); // scroll to top of the page -- xcoordinate,ycoordinate
+	//window.scrollTo(0, 100); // scroll to top of the page -- xcoordinate,ycoordinate
 
 	// Setting up the button listeners
 
 		// Sphypermedia Navbar Logo Listener
 		$('#sphypermedia-navbar-logo').click(function() {
-			window.scrollTo(0, 100); // xcoordinate,ycoordinate
+			//window.scrollTo(0, 100); // xcoordinate,ycoordinate
 			$('#navbar-home-li').addClass('active');
 			$('#navbar-about-li').removeClass('active');
 			$('#navbar-team-li').removeClass('active');
@@ -39,7 +39,7 @@ function prepare_page_load() {
 
 		// Home navbar button listener
 		$('#navbar-home-button').click(function() {
-			window.scrollTo(0, 100); // xcoordinate,ycoordinate
+			//window.scrollTo(0, 100); // xcoordinate,ycoordinate
 			$('#navbar-home-li').addClass('active');
 			$('#navbar-about-li').removeClass('active');
 			$('#navbar-team-li').removeClass('active');
@@ -84,6 +84,16 @@ function prepare_page_load() {
 			show_team();
 		});
 
+		// Learn More carousel button listener
+		// Team navbar button listener
+		$('#carousel-learn-more-button').click(function() {
+			$('#navbar-home-li').removeClass('active');
+			$('#navbar-about-li').removeClass('active');
+			$('#navbar-team-li').addClass('active');
+			$('#navbar-connect-li').removeClass('active')
+			show_about();
+		});
+
 		/*// Mouse-Ovr event so that if the user hovers their mouse over the slides, it goes to the first one
 		$( "#slides" ).mousemove(function(event) {
 		  	// Set first slide to be the active one
@@ -100,7 +110,7 @@ function prepare_page_load() {
 function show_home(){
 	hide_all();
 	$('#slides').fadeIn('slow');
-	window.scrollTo(0, 100); // xcoordinate,ycoordinate
+	//window.scrollTo(0, 100); // xcoordinate,ycoordinate
 	$('#footer-section').fadeIn('slow');
 
 	// Set first slide to be the active one
@@ -132,7 +142,7 @@ function show_connect(){
 // If you add a div to index.html, add it to the list..
 // NOTE: Excludes navbar and footer section
 function hide_all() {
-	window.scrollTo(0, 0); // scroll to top of the page -- xcoordinate,ycoordinate
+	//window.scrollTo(0, 0); // scroll to top of the page -- xcoordinate,ycoordinate
 	$('#slides').hide();
 	$('#about-section').hide();
 	$('#meet-the-team-div').hide();

@@ -86,7 +86,7 @@
 					<div class="carousel-caption">
 						<h1 class="display-2">Sphypermedia</h1>
 						<h3>CS 205 Final Project</h3>
-						<button type="button" class="btn btn-outline-light btn-lg hvr-grow">Play a Game</button>
+						<button id='carousel-learn-more-button' type="button" class="btn btn-outline-light btn-lg hvr-grow">Learn More</button>
 						<button id='carousel-team-button' type="button" class="btn btn-primary btn-lg hvr-grow">See the Team</button>
 					</div>
 				</div>
@@ -97,8 +97,8 @@
 					<div class="carousel-caption">
 						<h1 class="display-2">Sphypermedia</h1>
 						<h3>CS 205 Final Project</h3>
-						<button type="button" class="btn btn-outline-light btn-lg hvr-grow">Play a Game</button>
-						<button id='carousel-team-button' type="button" onclick='show_team()' class="btn btn-primary btn-lg hvr-grow">See the Team</button>
+						<button id='carousel-learn-more-button' type="button" class="btn btn-outline-light btn-lg hvr-grow">Learn More</button>
+						<button id='carousel-team-button' type="button" class="btn btn-primary btn-lg hvr-grow">See the Team</button>
 					</div>
 				</div>
 
@@ -108,8 +108,8 @@
 					<div class="carousel-caption">
 						<h1 class="display-2">Sphypermedia</h1>
 						<h3>CS 205 Final Project</h3>
-						<button type="button" class="btn btn-outline-light btn-lg hvr-grow">Play a Game</button>
-						<button id='carousel-team-button' type="button" onclick='show_team()'class="btn btn-primary btn-lg hvr-grow">See the Team</button>
+						<button id='carousel-learn-more-button' type="button" class="btn btn-outline-light btn-lg hvr-grow">Learn More</button>
+						<button id='carousel-team-button' type="button" class="btn btn-primary btn-lg hvr-grow">See the Team</button>
 					</div>						
 				</div>
 			</div>
@@ -160,7 +160,7 @@
 						<div class="col-lg-6">
 							<h2>Our Philosophy</h2>
 							<p>This website is brought to you by the Sphypermedia team. Not only is this an awesome CS 205 Final Project that is sure to get an A, it also runs entirely on the Flask Python and Bootstrap framework!</p>
-							<p>Our aim to to visualize spherical convergence via Unity and also have a website that we can walk away with to use as a template for future self-hosted resumes. We hope you enjoy checking out our site!</p>
+							<p>Our aim is to have a website that we can walk away with to use as a template for future self-hosted resumes. We hope you enjoy checking out our site!</p>
 							
 						</div>
 
@@ -208,7 +208,7 @@
 							<img class="card-img-top" src="{{ url_for('static',filename='derrick.png') }}">
 							<div class="card-body">
 								<h4 class="card-title">Derrick Leger </h4>
-								<p class="card-text">High level intro</p>
+								<p class="card-text">Front-end Developer</p>
 								<a id='see-derrick-profile' class="btn btn-outline-secondary hvr-grow">See Profile</a>
 							</div>
 						</div>
@@ -252,8 +252,8 @@
 								<h5>Developers</h5>
 								<hr class="light">
 								<a href="#" onclick="prepareNickPage()"><p>Nick Hella</p></a>
-								<p>Justin Adams</p>
-								<p>Derrick Leger</p>
+								<a href="#" onclick="prepareJustinPage()"><p>Justin Adams</p></a>
+								<a href="#" onclick="prepareDerrickPage()"><p>Derrick Leger</p></a>
 								<a href="#" onclick="prepareAndrewPage()"><p>Andrew O'Connor</p>
 							</div>
 							<div class="col-md-3">
