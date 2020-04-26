@@ -7,9 +7,9 @@ import json
 from flask import Flask, render_template, Blueprint, request, send_from_directory, send_file, flash, Blueprint, g, session, app, current_app
 from flask_wtf import Form
 from bll import logic_layer
-from bll import itunes
 from bs4 import BeautifulSoup as bs
 from werkzeug.utils import secure_filename
+from bll import itunes
 
 webapp = Blueprint("webapp",
 					__name__,
@@ -77,8 +77,6 @@ def nicks_load_weather_data():
 @webapp.route("/andrews-genre-data", methods=["POST"])
 def andrews_genre_data():
 	my_json = itunes.itunes.ReadItunesCsv()
-	print("\n\n 1Made it here! \n\n")
-	print(my_json)
 	return json.dumps(my_json)
 
 @webapp.route('/upload-csv', methods=['POST'])
@@ -86,12 +84,22 @@ def upload_file():
     f = request.files['filename']
     path = os.path.join(current_app.root_path, 'static/')
     f.save(os.path.join(path,secure_filename(f.filename)))
-    return("Upload successful, please go back!")
 
-@webapp.route('/')
-def output():
-	my_json = ReadItunesCsv()
-	return my_json
+    html_string = '''
+    				<h1>Upload successful</h1>
+    				<br><br>
+    				<h2> Please hit the back button </h2>
+    				<br>
+    				<h2> &nbsp;&nbsp;&nbsp;&nbsp; If redirected to the home page: <h2>
+    				<h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Return to my page,
+    					and select your file again.
+    				</h2> 
+    				<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Then, hit 'Draw Data Table'!</h2>
+    				<br><br>
+    				<h2>&nbsp;&nbsp;&nbsp;&nbsp;Otherwise: </h2>
+    				<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Just hit 'Draw Data Table'!</h2>
+    			'''
+    return(html_string)
 
 @webapp.route('/receiver', methods = ['POST'])
 def worker():
