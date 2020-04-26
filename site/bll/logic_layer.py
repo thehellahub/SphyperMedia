@@ -9,3 +9,8 @@ class LogicLayer:
 
 	def nicks_get_weather_data(self,zip_code):
 		return WeatherData.WeatherData(self._oa).nicks_query_by_zip_api_function(zip_code)
+
+	def andrews_load_genre_data():
+		return itunes.output()
+
+	
