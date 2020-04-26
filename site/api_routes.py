@@ -7,6 +7,7 @@ import json
 from flask import Flask, render_template, Blueprint, request, send_from_directory, send_file, flash, Blueprint, g, session, app
 from flask_wtf import Form
 from bll import logic_layer
+from bll import itunes
 from bs4 import BeautifulSoup as bs
 
 webapp = Blueprint("webapp",
@@ -24,7 +25,7 @@ LogicLayer = logic_layer.LogicLayer()
 def get_js__and_css_source():
 
 	# Add js files here as you create them
-	js_files = ['init.js','nick.js','magicscroll.js','derrick.js']
+	js_files = ['init.js','nick.js','magicscroll.js','derrick.js','andrew.js']
 
 	css_files = ['style.css', 'd3LineChart.css','tipsy.css','magicscroll.css']
 
@@ -66,6 +67,10 @@ def nicks_load_weather_data():
 	zip_code = request.form["zip_code"]
 	return json.dumps(LogicLayer.nicks_get_weather_data(zip_code))
 
+@webapp.route("/andrews-genre-data", methods=["POST"])
+def andrews_genre_data():
+	return json.dumps(itunes.output())
+
 
 @webapp.route('/download-nhella-resume',methods = ['GET'])
 def download_nhella_resume():
@@ -81,4 +86,12 @@ def download_dleger_resume():
 	return send_file(path+"/Resumes/Dleger_Resume.pdf",
 					mimetype='pdf',
 					attachment_filename='Dleger_Resume.pdf',
+					as_attachment=True)
+
+@webapp.route('/download-aoconnor-resume',methods = ['GET'])
+def download_aoconnor_resume():
+	path = os.getcwd()
+	return send_file(path+ "/Resumes/Aoconnor_Resume.pdf",
+					mimetype='pdf',
+					attachment_filename='Aoconnor _Resume.pdf',
 					as_attachment=True)
