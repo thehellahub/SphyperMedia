@@ -1,4 +1,5 @@
 from bll import WeatherData
+from bll import csvToDataTable
 from object_access_file import Object_Access
 
 class LogicLayer:
@@ -12,5 +13,8 @@ class LogicLayer:
 
 	def andrews_load_genre_data():
 		return itunes.output()
+
+	def andrews_load_datatable(self, filename):
+		return csvToDataTable.csvToDataTable(self._oa).convert(filename)
 
 	

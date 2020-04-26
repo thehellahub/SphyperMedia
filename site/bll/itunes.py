@@ -22,6 +22,8 @@ class itunes:
 					Genre[genre] = 1
 				else:
 					Genre[genre] += 1
+		del Genre["3:51"]
+		Genre["Hip-Hop/Rap"] += 1
 		for key in Genre:
 			Genre[key] = round((int(Genre[key])/line_count) * 100, 2)
 		my_json = json.dumps(Genre)
