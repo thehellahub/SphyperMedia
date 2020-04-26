@@ -17,7 +17,7 @@ webapp = Blueprint("webapp",
 					static_url_path="/static"
 					)
 
-api = Blueprint("api", __name__, url_prefix="/api")
+#api = Blueprint("api", __name__, url_prefix="/api")
 
 LogicLayer = logic_layer.LogicLayer()
 
