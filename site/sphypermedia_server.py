@@ -1,8 +1,8 @@
 import setproctitle
 from gevent.pywsgi import WSGIServer
 from api_routes import webapp
-from flask import Flask, redirect, url_for, render_template, Blueprint, session, app
-
+from flask import Flask, redirect, url_for, render_template, Blueprint, session, app, flash
+import os
 
 debug = True
 
@@ -10,7 +10,9 @@ hostname = 'sphypermedia'
 
 app = Flask(__name__)
 app.register_blueprint(webapp)
-app.config['SERVER_NAME'] = 'sphypermedia.com:5000'	# only for running on server
+#app.config['SERVER_NAME'] = 'sphypermedia.com:5000'	# only for running on server
+app.config['UPLOAD_FOLDER'] = '/static/'
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 def main():
 

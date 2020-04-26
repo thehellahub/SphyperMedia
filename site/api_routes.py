@@ -4,11 +4,12 @@ import glob
 import pandas as pd
 import numpy as np
 import json
-from flask import Flask, render_template, Blueprint, request, send_from_directory, send_file, flash, Blueprint, g, session, app
+from flask import Flask, render_template, Blueprint, request, send_from_directory, send_file, flash, Blueprint, g, session, app, current_app
 from flask_wtf import Form
 from bll import logic_layer
 from bll import itunes
 from bs4 import BeautifulSoup as bs
+from werkzeug.utils import secure_filename
 
 webapp = Blueprint("webapp",
 					__name__,
@@ -20,6 +21,12 @@ webapp = Blueprint("webapp",
 #api = Blueprint("api", __name__, url_prefix="/api")
 
 LogicLayer = logic_layer.LogicLayer()
+
+ALLOWED_EXTENSIONS = set(['csv'])
+
+
+def allowed_file(filename):
+	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 def get_js__and_css_source():
@@ -69,8 +76,39 @@ def nicks_load_weather_data():
 
 @webapp.route("/andrews-genre-data", methods=["POST"])
 def andrews_genre_data():
-	return json.dumps(itunes.output())
+	my_json = itunes.itunes.ReadItunesCsv()
+	print("\n\n 1Made it here! \n\n")
+	print(my_json)
+	return json.dumps(my_json)
 
+@webapp.route('/upload-csv', methods=['POST'])
+def upload_file():
+    f = request.files['filename']
+    path = os.path.join(current_app.root_path, 'static/')
+    f.save(os.path.join(path,secure_filename(f.filename)))
+    return("Upload successful, please go back!")
+
+@webapp.route('/')
+def output():
+	my_json = ReadItunesCsv()
+	return my_json
+
+@webapp.route('/receiver', methods = ['POST'])
+def worker():
+	data = request.get_json(my_json)
+	result = ''
+
+
+@webapp.route('/make-datatable', methods=['POST'])
+def make_datatable():
+	filename = request.form['filename']
+	print("\n\n Made it here! \n\n")
+	return json.dumps(LogicLayer.andrews_load_datatable(filename))
+
+
+@webapp.route("/upload-csv", methods=["POST"])
+def upload_csv():
+	return json.dumps()
 
 @webapp.route('/download-nhella-resume',methods = ['GET'])
 def download_nhella_resume():

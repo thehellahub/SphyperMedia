@@ -117,4 +117,23 @@ function loadGenreChart(result){
 			}]
 		});
 		genre_chart.render();
+
+		$('#draw-data-table').click(function() {
+			var name = document.getElementById('myfile'); 
+			name = name.files.item(0).name
+			//console.log('Selected file: '+ name.files.item(0).name);
+
+			$.ajax({
+				url: "/make-datatable",
+				dataType: "json",
+				async: false,
+				type: "POST",
+				data: {"filename": name},
+				success: function(result){
+					$("#mydatatable").html(result);
+					$('#mytable').DataTable();
+
+				}
+			});
+		});
 }
