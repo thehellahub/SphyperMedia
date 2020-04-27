@@ -101,7 +101,6 @@ def upload_file():
     			'''
     return(html_string)
 
-<<<<<<< HEAD
 @webapp.route("/justins-load-server-data", methods=["POST"])
 def justins_load_server_data():
 	ip_address = request.form["ip_address"]
@@ -113,9 +112,6 @@ def worker():
 	data = request.get_json(my_json)
 	result = ''
 
-
-=======
->>>>>>> 2a9dba96153142ad65f2f89c1c99cc6ff4e15177
 @webapp.route('/make-datatable', methods=['POST'])
 def make_datatable():
 	filename = request.form['filename']
@@ -146,7 +142,6 @@ def download_aoconnor_resume():
 					mimetype='pdf',
 					attachment_filename='Aoconnor _Resume.pdf',
 					as_attachment=True)
-<<<<<<< HEAD
 
 @webapp.route('/download-jadams-resume',methods = ['GET'])
 def download_jadams_resume():
@@ -155,5 +150,3 @@ def download_jadams_resume():
 					mimetype='pdf',
 					attachment_filename='Jadams_Resume.pdf',
 					as_attachment=True)
-=======
->>>>>>> 2a9dba96153142ad65f2f89c1c99cc6ff4e15177

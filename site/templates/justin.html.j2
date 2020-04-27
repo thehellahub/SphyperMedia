@@ -72,7 +72,7 @@
         </form> -->
         <form action= "/justins-load-server-data" method = "POST" enctype = "multipart/form-data">
             <div class ="panel-body text-center" style="">
-                <input type="text" id="ipAddress" name="Ip Address:">
+                <input type="text" id="ipAddress" name="Ip Address">
                 <input type="submit" value="Submit">
                 <br>
                 <br>
@@ -87,7 +87,9 @@
         
 
      </div>
-     <div id="serverdatatable" class="col-lg-12" style="padding-left: 5%; padding-right: 5%;"></div>
+     <div id="serverdatatable" class="col-lg-12" style="padding-left: 5%; padding-right: 5%;">
+      <img src="{{ url_for('static',filename='serverStatus.PNG') }}" alt="" style='padding-right:4%;'>
+     </div>
 
 	</div>
 </div>
