@@ -1,0 +1,93 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top" style="background-color: #ffffff">
+	<a href="/download-jadams-resume" target="_blank" class="btn btn-primary btn-lg btn-block">
+		<button id='aoconnor_download_resume_button' href="/download-jadams-resume" target="_blank" type="button" class="btn btn-primary btn-lg btn-block"><p style='padding-top:1%'>Download Justin's Resume!</p></button>
+	</a>
+</nav>
+<nav class="navbar navbar-expand-md navbar-light bg-light" style="background-color: #ffffff">
+		<p class='col-lg-6' style='padding-left:15%; padding-right:20%;'>justin.adams@uvm.edu</p>
+		<p class='col-lg-6' style='padding-left:20%;'>(802)-922-6669</p>
+</nav>
+
+<div class="container-fluid padding">
+	<div class="row padding">
+
+		<div class="col-lg-6" style='padding-left:20px;'>
+
+			<h2>Justin C. Adams</h2>
+
+			<p> &#8226; Pursuing BS in Computer Science with a focus in quantum computing.</p>
+
+			<p> &#8226; University of Vermont Class of 2020</p>
+
+			<p> &#8226; Interested in research and economic sector development.</p>
+
+			<p> &#8226; Experience working with large scale enterprise systems.</p>
+
+
+			<br>
+
+		</div>
+
+		<div id="LanguagePieChartContainer" style="height: 400px; width: 50%;" class="col-lg-6"></div>
+
+		<!-- Magic scroll carousel - ** NOT WORKING ** - unsure why..  -->
+		<!-- <div class="MagicScroll" data-options="mode: carousel; height: 275px;">
+			    <img src="{{ url_for('static',filename='python_logo2.png') }}" />
+			    <img src="{{ url_for('static',filename='sql_logo2.png') }}" />
+			    <img src="{{ url_for('static',filename='XilinxISE_DS_Logo.jpg') }}" />
+			    <img src="{{ url_for('static',filename='html_logo2.png') }}" />
+			    <img src="{{ url_for('static',filename='javascript_logo2.png') }}" />
+			    <img src="{{ url_for('static',filename='qiskit.png') }}" />
+          <img src="{{ url_for('static',filename='digital-design.jpg') }}" />
+          <img src="{{ url_for('static',filename='c++.jpg') }}" />
+          <img src="{{ url_for('static',filename='java.png') }}" />
+          <img src="{{ url_for('static',filename='swift.jpg') }}" />
+          <img src="{{ url_for('static',filename='ruby.png') }}" />
+		</div> -->
+
+		<!-- Breakline div -->
+		<div id='breakline-div' class='col-lg-12'>	<br> <br> <br> </div>
+
+
+    <staticContent>
+      <mimeMap fileExtension=".json" mimeType="application/json" />
+    </staticContent>
+
+      <div class="container">
+        <br>
+        <h3 align="center">Check the status of our web server!</h3>
+        <br>
+        <!-- <form action = "/justins-load-server-data" method = "POST" enctype="multipart/form-data">
+          <div class="col-lg-3">
+            <br>
+            <label>Server Status</label>
+          </div>  
+          <div class="col-lg-4">  
+            <input type="file" name="csv_file" id="csv_file" accept=".csv" style="margin-top:15px;" />
+          </div>  
+          <div id ="upload-csv" class="col-lg-5">  
+            <input type="submit" name="upload" id="upload-csv" value="Upload" style="margin-top:10px;" class="btn btn-info" />
+          </div>  
+          <div style="clear:both"></div>
+        </form> -->
+        <form action= "/justins-load-server-data" method = "POST" enctype = "multipart/form-data">
+            <div class ="panel-body text-center" style="">
+                <input type="text" id="ipAddress" name="Ip Address:">
+                <input type="submit" value="Submit">
+                <br>
+                <br>
+                <a id='draw-server-data-table' class="btn btn-outline-secondary hvr-grow">Draw Data Table</a>
+                <br>
+                <br>
+            </div>
+        </form>
+
+        <br>
+        <br>
+        
+
+     </div>
+     <div id="serverdatatable" class="col-lg-12" style="padding-left: 5%; padding-right: 5%;"></div>
+
+	</div>
+</div>

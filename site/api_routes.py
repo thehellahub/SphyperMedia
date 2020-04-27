@@ -32,7 +32,7 @@ def allowed_file(filename):
 def get_js__and_css_source():
 
 	# Add js files here as you create them
-	js_files = ['init.js','nick.js','magicscroll.js','derrick.js','andrew.js']
+	js_files = ['init.js','nick.js','magicscroll.js','derrick.js','andrew.js', 'justin.js']
 
 	css_files = ['style.css', 'd3LineChart.css','tipsy.css','magicscroll.css']
 
@@ -101,6 +101,12 @@ def upload_file():
     			'''
     return(html_string)
 
+@webapp.route("/justins-load-server-data", methods=["POST"])
+def justins_load_server_data():
+	ip_address = request.form["ip_address"]
+	return json.dumps(LogicLayer.justins_get_server_data(ip_address))
+
+
 @webapp.route('/receiver', methods = ['POST'])
 def worker():
 	data = request.get_json(my_json)
@@ -140,4 +146,12 @@ def download_aoconnor_resume():
 	return send_file(path+ "/Resumes/Aoconnor_Resume.pdf",
 					mimetype='pdf',
 					attachment_filename='Aoconnor _Resume.pdf',
+					as_attachment=True)
+
+@webapp.route('/download-jadams-resume',methods = ['GET'])
+def download_jadams_resume():
+	path = os.getcwd()
+	return send_file(path+ "/Resumes/Jadams_Resume.pdf",
+					mimetype='pdf',
+					attachment_filename='Jadams_Resume.pdf',
 					as_attachment=True)

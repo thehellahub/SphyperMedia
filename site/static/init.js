@@ -14,6 +14,10 @@ $( document ).ready(function() {
     $('#see-derrick-profile').click(function() {
 		prepareDerrickPage();
 	});
+	$('#see-justin-profile').click(function() {
+		prepareJustinPage();
+		console.log("your mother");
+	});
 });
 
 // Initial page setup

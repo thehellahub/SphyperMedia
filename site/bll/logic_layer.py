@@ -1,5 +1,6 @@
 from bll import WeatherData
 from bll import csvToDataTable
+from bll import ServerStatusGraphs
 from object_access_file import Object_Access
 
 class LogicLayer:
@@ -16,5 +17,8 @@ class LogicLayer:
 
 	def andrews_load_datatable(self, filename):
 		return csvToDataTable.csvToDataTable(self._oa).convert(filename)
+
+	def justins_get_server_data(self, ipAddress):
+		return ServerStatusGraphs.ServerStatusGraphs(self._oa).render(ipAddress)
 
 	
