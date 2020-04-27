@@ -101,22 +101,12 @@ def upload_file():
     			'''
     return(html_string)
 
-@webapp.route('/receiver', methods = ['POST'])
-def worker():
-	data = request.get_json(my_json)
-	result = ''
-
-
 @webapp.route('/make-datatable', methods=['POST'])
 def make_datatable():
 	filename = request.form['filename']
 	print("\n\n Made it here! \n\n")
 	return json.dumps(LogicLayer.andrews_load_datatable(filename))
 
-
-@webapp.route("/upload-csv", methods=["POST"])
-def upload_csv():
-	return json.dumps()
 
 @webapp.route('/download-nhella-resume',methods = ['GET'])
 def download_nhella_resume():
