@@ -101,6 +101,7 @@ def upload_file():
     			'''
     return(html_string)
 
+<<<<<<< HEAD
 @webapp.route("/justins-load-server-data", methods=["POST"])
 def justins_load_server_data():
 	ip_address = request.form["ip_address"]
@@ -113,16 +114,14 @@ def worker():
 	result = ''
 
 
+=======
+>>>>>>> 2a9dba96153142ad65f2f89c1c99cc6ff4e15177
 @webapp.route('/make-datatable', methods=['POST'])
 def make_datatable():
 	filename = request.form['filename']
 	print("\n\n Made it here! \n\n")
 	return json.dumps(LogicLayer.andrews_load_datatable(filename))
 
-
-@webapp.route("/upload-csv", methods=["POST"])
-def upload_csv():
-	return json.dumps()
 
 @webapp.route('/download-nhella-resume',methods = ['GET'])
 def download_nhella_resume():
@@ -147,6 +146,7 @@ def download_aoconnor_resume():
 					mimetype='pdf',
 					attachment_filename='Aoconnor _Resume.pdf',
 					as_attachment=True)
+<<<<<<< HEAD
 
 @webapp.route('/download-jadams-resume',methods = ['GET'])
 def download_jadams_resume():
@@ -155,3 +155,5 @@ def download_jadams_resume():
 					mimetype='pdf',
 					attachment_filename='Jadams_Resume.pdf',
 					as_attachment=True)
+=======
+>>>>>>> 2a9dba96153142ad65f2f89c1c99cc6ff4e15177
