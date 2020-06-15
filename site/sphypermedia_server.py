@@ -10,7 +10,6 @@ hostname = 'sphypermedia'
 
 app = Flask(__name__)
 app.register_blueprint(webapp)
-#app.config['SERVER_NAME'] = 'sphypermedia.com:5000'	# only for running on server
 
 app.config['UPLOAD_FOLDER'] = '/static/'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
@@ -21,6 +20,7 @@ def main():
 	app.run(debug=debug, host='127.0.0.1')
 
 	# For server, use this
+	#app.config['SERVER_NAME'] = 'sphypermedia.com:5000'	# only for running on server
 	#app.run(debug=debug)
 
 main()

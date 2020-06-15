@@ -10,6 +10,7 @@ from bll import logic_layer
 from bs4 import BeautifulSoup as bs
 from werkzeug.utils import secure_filename
 from bll import itunes
+from pathlib import Path
 
 webapp = Blueprint("webapp",
 					__name__,
@@ -82,8 +83,9 @@ def andrews_genre_data():
 @webapp.route('/upload-csv', methods=['POST'])
 def upload_file():
     f = request.files['filename']
-    path = os.path.join(current_app.root_path, 'static/')
-    f.save(os.path.join(path,secure_filename(f.filename)))
+    path = os.path.join(current_app.root_path, '/static') # to move into static folder
+    #p = Path('/Users/NickHella/Desktop/') # to move to my Desktop
+    f.save(os.path.join(p,secure_filename(f.filename)))
 
     html_string = '''
     				<h1>Upload successful</h1>
